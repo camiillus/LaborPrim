@@ -35,9 +35,9 @@ int istPrimzahl(int kandidat)
 
 }
 
-int existiertPrimzahlzwillingImIntervall(int a, int b) {
+int existiertPrimzahlzwillingImIntervall(int von, int bis) {
     
-    for (int i = a; i <= b - 2; i++) { // Wenn es nur bis b gehen wuerde, wuerde es noch das Intervall bis auf zwei Weitere Stellen pruefen und der Index waere ausserhalb des Intervalls.
+    for (int i = von; i <= bis - 2; i++) { // -2 weil sonst, wuerde es noch das Intervall bis auf zwei Weitere Stellen pruefen und der Index waere ausserhalb des Intervalls.
         if (istPrimzahl(i) && istPrimzahl(i+2)) {
             return 1;
         }
