@@ -3,10 +3,10 @@
 
 int schätzung = 0;
 
-int schätzePrimBis(float grenze) {
+int schätzePrimBis(float grenze) { //erste Funktion
     if (grenze < 2)
     {
-        return 0;
+        return 0; 
     }
     return (grenze / log(grenze));
 }
