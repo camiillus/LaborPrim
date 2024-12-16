@@ -21,3 +21,19 @@ int istPrimzahl(int kandidat)
 
 }
 
+int primzahlZwilling(int zahl){
+    if (!istPrimzahl(zahl)) // Wenn die Zahl keine Primzahl ist, breche Programm ab.
+    {
+        return 0;
+
+    }else if(istPrimzahl(zahl -2)||istPrimzahl(zahl+2)){
+
+        return 1; // es existiert ein Primzahlzwilling 
+
+
+    }
+
+    return 0; // kein Primzahlzwilling
+
+    
+}
