@@ -85,9 +85,9 @@ void schreibePrimzahlzwillingeInDatei(const char *dateiName, int von, int bis) {
         return;
     }
     
-    for (int i = von; i <= bis - 2; i++) { // -2 weil sonst, wuerde es noch das Intervall bis auf zwei Weitere Stellen pruefen und der Index waere ausserhalb des Intervalls.
-        if (istPrimzahl(i) && istPrimzahl(i+2)) {
-            fprintf(datei, "Primzahl=%d DerZwilling=%d\n", i, i+2); 
+   for (int i = von; i <= bis; i++) {
+        if (primzahlZwilling(i)) {
+            fprintf(datei, "%d\n", i); // fprintf, da wir jede i-te Primzahl in die Datei reinschreiben wollen und nicht in der Konsole ausgeben wollen.
         }
     }
     fclose(datei);
