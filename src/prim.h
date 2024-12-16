@@ -86,9 +86,11 @@ void schreibePrimzahlzwillingeInDatei(const char *dateiName, int von, int bis) {
     }
     
    for (int i = von; i <= bis; i++) {
-        if (primzahlZwilling(i)) {
+        if (primzahlZwilling(i)) { // das muss noch getestet werden, ich bin mir nicht sicher, ob das funktioniert.
             fprintf(datei, "%d\n", i); // fprintf, da wir jede i-te Primzahl in die Datei reinschreiben wollen und nicht in der Konsole ausgeben wollen.
         }
     }
     fclose(datei);
 }
+
+
