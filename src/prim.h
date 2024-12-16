@@ -38,7 +38,7 @@ int primzahlZwilling(int zahl){
     
 }
 
-int schätzePrimBis(float grenze) { //erste Funktion
+int schätzePrimBisGauss(float grenze) { //erste Funktion
     if (grenze < 2)
     {
         return 0; 
