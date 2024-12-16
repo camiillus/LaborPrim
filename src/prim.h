@@ -50,3 +50,14 @@ int schätzePrimVonBis(int von, int bis) {
 	int differenz = (int) schätzePrimBis(bis) - schätzePrimBis(von);
     return differenz; 
 }
+
+
+int existiertPrimzahlzwillingImIntervall(int von, int bis) {
+    
+    for (int i = von; i <= bis - 2; i++) { // -2 weil sonst, wuerde es noch das Intervall bis auf zwei Weitere Stellen pruefen und der Index waere ausserhalb des Intervalls.
+        if (istPrimzahl(i) && istPrimzahl(i+2)) {
+            return 1;
+        }
+    }
+    return 0;
+}
