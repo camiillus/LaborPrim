@@ -37,3 +37,16 @@ int primzahlZwilling(int zahl){
 
     
 }
+
+int schätzePrimBis(float grenze) { //erste Funktion
+    if (grenze < 2)
+    {
+        return 0; 
+    }
+    return (grenze / log(grenze));
+}
+
+int schätzePrimVonBis(int von, int bis) {
+	int differenz = (int) schätzePrimBis(bis) - schätzePrimBis(von);
+    return differenz; 
+}
