@@ -38,7 +38,7 @@ int primzahlZwilling(int zahl){
     
 }
 
-int schaetzePrimBisGauss(float grenze) { //erste Funktion
+int schaetzePrimBisGauss(float grenze) { 
     if (grenze < 2)
     {
         return 0; 
@@ -73,6 +73,21 @@ void schreibePrimzahlenInDatei(const char *dateiName, int von, int bis) { // ein
     for (int i = von; i <= bis; i++) {
         if (istPrimzahl(i)) {
             fprintf(datei, "%d\n", i); // fprintf, da wir jede i-te Primzahl in die Datei reinschreiben wollen und nicht in der Konsole ausgeben wollen.
+        }
+    }
+    fclose(datei);
+}
+
+void schreibePrimzahlzwillingeInDatei(const char *dateiName, int von, int bis) {
+    FILE *datei = fopen(dateiName, "w");
+    if (!datei) {
+        printf("Fehler beim Öffnen der Datei %s\n", datei);
+        return;
+    }
+    
+    for (int i = von; i <= bis - 2; i++) {
+        if (istPrimzahl(i) && istPrimzahl(i+2)) {
+            fprintf(datei, "Primzahl=%d DerZwilling=%d\n", i, i+2);
         }
     }
     fclose(datei);
